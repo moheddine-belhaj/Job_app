@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref , onMounted } from 'vue';
 
 
     const name = ref( 'JOB JOB');
@@ -24,8 +24,20 @@ import { ref } from 'vue';
   };
 
   const DeleteTask = (index) => {
-    tasks.value.splice(index , 1000000);
+    tasks.value.splice(index , 1);
   };
+
+  onMounted(async async  => {
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+      const data = await response.json();
+      tasks.value = data.map((task) => task.title);
+    } catch (error) {
+      console.log('error fetching');
+    }
+  }
+
+  );
 </script>
 
 <template>
