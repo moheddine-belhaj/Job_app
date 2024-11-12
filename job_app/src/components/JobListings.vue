@@ -1,8 +1,16 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted ,defineProps } from 'vue';
 import jobListing from './jobListing.vue';
 const jobs = ref([]);
 
+defineProps({
+  limit: Number,
+  showButton:{
+    type:Boolean,
+    default:false
+
+  }
+})
 
 onMounted(async () => {
   try {
@@ -16,6 +24,7 @@ onMounted(async () => {
     console.error('Error fetching jobs:', error);
   }
 });
+
 </script>
 
 
@@ -27,12 +36,20 @@ onMounted(async () => {
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                <jobListing v-for="job in jobs" :key="job.id" :job="job" />
+                <jobListing v-for="job in jobs.slice(0, limit || jobs.length)" 
+                :key="job.id" 
+                :job="job" />
 
             </div>
         </div>
-
-
 </section>
+<section class="m-auto max-w-lg my-10 px-6">
+      <a
+        href="/jobs"
+        class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
+        >View All Jobs</a
+      >
+    </section>
+
 
 </template>
