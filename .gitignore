@@ -30,4 +30,4 @@ coverage
 *.tsbuildinfo
 
 # folder 
-./_theme_files
+/_theme_files/
