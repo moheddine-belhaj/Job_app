@@ -21,9 +21,45 @@ npm install
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 ```
 
+### Icons
+
+```sh
+
+npm install primeicons
+```
+
+### vue-router
+
+```sh
+npm i vue-router
+```
+### react-spinners
+
+```sh
+npm install --save react-spinners
+```
+
+### vue-toastification
+
+```sh
+npm install --save vue-toastification
+```
+
 ### Create your configuration files
 ```sh
 npx tailwindcss init -p
+```
+
+### Install json-server
+
+```sh
+npm install -g json-server
+```
+
+### Run The server
+
+```sh
+npm run server
 ```
 
 ### Compile and Hot-Reload for Development
