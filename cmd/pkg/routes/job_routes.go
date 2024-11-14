@@ -6,9 +6,9 @@ import (
 )
 
 var RegisterJobRoutes = func(router *mux.Router) {
-	router.HandleFunc("/job/create", controllers.CreateJob).Methods("POST")
-	router.HandleFunc("/job/all", controllers.GetJobs).Methods("GET")
-	router.HandleFunc("/job/{jobId}", controllers.GetJobById).Methods("GET")
-	router.HandleFunc("/job/update/{jobId}", controllers.UpdateJob).Methods("PUT")
-	router.HandleFunc("/job/delete/{jobId}", controllers.DeleteJob).Methods("DELETE")
+    router.HandleFunc("/job/create", controllers.CreateJob).Methods("POST")
+    router.HandleFunc("/job/all", controllers.GetJobs).Methods("GET")
+    router.HandleFunc("/job/{jobId}", controllers.GetJobById).Methods("GET")
+    router.HandleFunc("/job/update/{jobId}", controllers.UpdateJob).Methods("PUT")
+    router.HandleFunc("/job/delete/{jobId}", controllers.DeleteJob).Methods("DELETE")
 }
